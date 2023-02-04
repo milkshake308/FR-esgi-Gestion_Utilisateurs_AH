@@ -10,6 +10,7 @@ dsn = {
     "password": db_config["db_pass"],
     "database": db_config["db_name"],
 }
+#  pre-generated query method
 def fetchdata_from_query(query):
     try:   
         with mysql.connector.connect(
@@ -20,6 +21,24 @@ def fetchdata_from_query(query):
         ) as cnxn:
             with cnxn.cursor() as cursor:
                 cursor.execute(query)
+                r = cursor.fetchall()
+                return r
+    except Exception as e:
+        print('❌')
+        print(e)
+        raise ConnectionError
+
+#  parameters binding to query method
+def bind_query(query: str, param: str):
+    try:   
+        with mysql.connector.connect(
+            host=db_config["db_host"],
+            user=db_config["db_user"],
+            passwd=db_config["db_pass"],
+            db=db_config["db_name"]
+        ) as cnxn:
+            with cnxn.cursor() as cursor:
+                cursor.execute(query, param)
                 r = cursor.fetchall()
                 return r
     except Exception as e:
@@ -48,19 +67,4 @@ def check_db():
         print(e)
     return True
 
-def bind_query():
-    try:   
-        with mysql.connector.connect(
-            host=db_config["db_host"],
-            user=db_config["db_user"],
-            passwd=db_config["db_pass"],
-            db=db_config["db_name"]
-        ) as cnxn:
-            with cnxn.cursor() as cursor:
-                cursor.execute(query)
-                r = cursor.fetchall()
-                return r
-    except Exception as e:
-        print('❌')
-        print(e)
-        raise ConnectionError
+
