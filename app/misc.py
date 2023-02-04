@@ -1,3 +1,7 @@
+# Variable toggle d'éxécution
+app = True
+
+
 def prompt_yes_no(prompt: str):
     while True:
         response = input((prompt+' [o/N]: '))
