@@ -30,7 +30,7 @@ Projet Patient-First
 
 1. Récupérer le projet `git clone https://github.com/milkshake308/Gestion_Utilisateurs_AH.git`
 
-2. Installer les pré-requis avec : `pip install -r requirements.txt`
+2. Aller dans le dossier du projet et installer les pré-requis avec : `pip install -r requirements.txt`
 
 3. Créer la base de données patientfirst et assigner un utilisateur avec tout les droits dessus
 * Exemple avec docker : 
