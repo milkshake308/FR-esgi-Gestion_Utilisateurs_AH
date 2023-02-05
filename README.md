@@ -1,25 +1,3 @@
-<!-----
-
-Yay, no errors, warnings, or alerts!
-
-Conversion time: 0.26 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β34
-* Thu Jan 12 2023 04:38:19 GMT-0800 (PST)
-* Source doc: Projet Semestre 1 - scripting python
-* This is a partial selection. Check to make sure intra-doc links work.
------>
-
 
 Projet Patient-First
 
@@ -27,7 +5,7 @@ Projet Patient-First
 
 
 
-* **Gestion des utilisateurs/administrateurs **: 
+* **Gestion des utilisateurs/administrateurs**: 
     *  Créer de nouveaux Utilisateurs selon les profils et les droits définis. 
     *  Définir les règles de gestion et de sécurité des login/pwd (Login : contraction de la première lettre du prénom et du nom utilisateur (non composé), (PWD : génération aléatoire et hachage avant sauvegarde persistante, durée de validité, ...) 
     * Modifier/supprimer un utilisateur/un admin.
@@ -37,8 +15,6 @@ Projet Patient-First
     * Permettre les accès aux divers admins et corps de métier (pas les patients) via une authentification contrôlée.
 
 <span style="text-decoration:underline;">Fonctionnalités à produire :</span>
-
-
 
 * Stockage dans base de données
 * Règles de gestion et sécurisation des logins :
@@ -57,10 +33,14 @@ Projet Patient-First
 2. Installer les pré-requis avec : `pip install -r requirements.txt`
 
 3. Créer la base de données patientfirst et assigner un utilisateur avec tout les droits dessus
+* Exemple avec docker : 
+    * Créer le conteneur de base de données : ` docker run --name pfadb0 -e MYSQL_ROOT_PASSWORD=3srcc2023 -e MYSQL_USER=pfa -e MYSQL_PASSWORD=pfaadm -e MYSQL_DATABASE=pfa -p 3306:3306 -d mariadb `                     
+    * Charger la base de données : ` docker exec -i pfadb0 mysql -uroot -pghy483$ pfa < app/db_schema.sql `                     
 
 4. Renseigner les informations nécéssaires pour la connexion a la base de données dans le env_example et renommer le fichier .env
 
 <span style="text-decoration:underline;">Utilisation :</span>
 
-1. Executer l'app avec `python main.py` 
+1. Executer l'app avec `python main.py`
+2. Vous pouvez saisir les identifiants `admin admin` par défaut pour vous connecter
 
