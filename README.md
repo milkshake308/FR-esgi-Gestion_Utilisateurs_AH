@@ -34,8 +34,10 @@ Projet Patient-First
 
 3. Créer la base de données patientfirst et assigner un utilisateur avec tout les droits dessus
 * Exemple avec docker : 
-    * Créer le conteneur de base de données : ` docker run --name pfadb0 -e MYSQL_ROOT_PASSWORD=3srcc2023 -e MYSQL_USER=pfa -e MYSQL_PASSWORD=pfaadm -e MYSQL_DATABASE=pfa -p 3306:3306 -d mariadb `                     
-    * Charger la base de données : ` docker exec -i pfadb0 mysql -uroot -pghy483$ pfa < app/db_schema.sql `                     
+    * Créer le conteneur de base de données : 
+    ` docker run --name pfadb0 -e MYSQL_ROOT_PASSWORD=3srcc2023 -e MYSQL_USER=pfa -e MYSQL_PASSWORD=pfaadm -e MYSQL_DATABASE=pfa -p 3306:3306 -d mariadb `                     
+    * Charger la base de données : 
+    ` docker exec -i pfadb0 mysql -uroot -pghy483$ pfa < app/db_schema.sql `                     
 
 4. Renseigner les informations nécéssaires pour la connexion a la base de données dans le env_example et renommer le fichier .env
 
