@@ -80,6 +80,7 @@ def change_passwd(user_id):
     if misc.prompt_yes_no('Voulez-vous obtenir un mot de passe pré-généré ?'):
         new_passwd, new_hashed_passwd = misc.generate_passwd()
         print('Votre nouveau mot de passe est :', new_passwd)
+        input('Appuyer sur une touche pour continuer .. (Attention vous ne pourrez plus revoir votre mot de passe !)')
     else:
         new_passwd = getpass.getpass("Nouveau mot de passe :")
         new_hashed_passwd = misc.sha256_generator(new_passwd)
